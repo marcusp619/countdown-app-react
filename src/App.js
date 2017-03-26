@@ -9,9 +9,15 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props)
+    // data that is important to the information
     this.state = {
       deadline: 'December 25, 2017'
     }
+  }
+
+  changeDeadline() {
+    // never mutate state directly
+    this.setState({deadline: 'November 25, 2017'})
   }
   // render method returns this to the view
   render() {
@@ -26,7 +32,9 @@ class App extends Component {
         </div>
         <div>
           <input placeholder='new date'/>
-          <button>Sumbut</button>
+          <button onClick={() => this.changeDeadline()}>
+            Sumbut
+          </button>
         </div>
       </div>
     )
