@@ -27,7 +27,10 @@ class App extends Component {
       <div className="App">
         <div className="App-title">Countdown to {this.state.deadline}
         </div>
-        <Clock />
+        <Clock
+          // inherits from its parent Component App.js
+          deadline={this.state.deadline}
+        />
         <div>
           <input
             placeholder='new date'
